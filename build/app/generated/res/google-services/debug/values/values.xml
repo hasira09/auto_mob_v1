@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">411868976695-188k359jlhs2ja1nb72ifl012arocuk8.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">411868976695</string>
+    <string name="google_api_key" translatable="false">AIzaSyCSO6IhjZ3ECiPXdR8DnySkcmNMhW_LmVE</string>
+    <string name="google_app_id" translatable="false">1:411868976695:android:6cd8ed96a3f971a25ad1b2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCSO6IhjZ3ECiPXdR8DnySkcmNMhW_LmVE</string>
+    <string name="google_storage_bucket" translatable="false">automobv1.appspot.com</string>
+    <string name="project_id" translatable="false">automobv1</string>
+</resources>

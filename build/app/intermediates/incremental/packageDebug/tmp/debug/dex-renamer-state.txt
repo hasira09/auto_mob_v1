@@ -1,0 +1,4 @@
+#Fri Jan 20 20:01:42 IST 2023
+base.0=C\:\\Users\\WWW\\StudioProjects\\auto_mob_v1\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
