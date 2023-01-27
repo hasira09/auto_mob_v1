@@ -35,6 +35,9 @@ dependencies:
   firebase_core:
   loading_overlay: ^0.2.1
   google_sign_in: ^5.4.3
+  cloud_firestore: ^4.3.1
+  pdf: ^3.8.4
+  printing: ^5.9.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -78,6 +81,7 @@ flutter:
   - assets/images/
   - assets/icons/
   - assets/icons/Home.svg
+  - assets/Check.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

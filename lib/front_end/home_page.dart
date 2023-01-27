@@ -5,12 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Main Pages/Attendance.dart';
+import '../Main Pages/Attendance/mainpage.dart';
+import '../Main Pages/Attendance/main_attendance_page.dart';
+import '../Main Pages/Settings Page/Attendance/Attendance.dart';
 import '../Main Pages/Emergency.dart';
 import '../Main Pages/Location.dart';
 import '../Main Pages/Payment.dart';
 import '../Main Pages/Settings Page/Settings.dart';
 import '../Main Pages/View Profile.dart';
+import '../Main Pages/Attendance/add.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -102,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => AttendancePage()));
+                                    builder: (context) => Home()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
