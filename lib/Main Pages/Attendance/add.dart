@@ -10,99 +10,151 @@ class add extends StatefulWidget {
 
 class _addState extends State<add> {
   TextEditingController route = TextEditingController();
-  //TextEditingController div = TextEditingController();
+  TextEditingController index = TextEditingController();
   TextEditingController date = TextEditingController();
+  TextEditingController time = TextEditingController();
 
   CollectionReference ref = FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      resizeToAvoidBottomInset: false,
+        appBar: AppBar(
         title: Text('Add Attendance'),
       ),
-      body: Container(
+      body: SingleChildScrollView(
+        child: Container(
 
-        child: Column(
+          child: Column(
 
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            SvgPicture.asset(
-              "assets/icons/Attendance.svg",
-              width: 200,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              SvgPicture.asset(
+                "assets/icons/Attendance.svg",
+                width: 150,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
 
-              //SizedBox(height: 60.0,),
-              padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
-              child: TextFormField(
-                //validator: validator,
-                controller: route,
-                //style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    hintText: 'Add Bus Route',
-                    hintStyle: TextStyle(color: Colors.black),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.black26,
-                          width: 2.0,
-                        )
-                    )
+                //SizedBox(height: 60.0,),
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  //validator: validator,
+                  controller: index,
+                  //style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: 'Add your index number',
+                      hintStyle: TextStyle(color: Colors.black45),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black26,
+                            width: 2.0,
+                          )
+                      )
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
-              child: TextFormField(
-                //validator: validator,
-                controller: date,
-                //style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    hintText: 'Add Date',
-                    hintStyle: TextStyle(color: Colors.black),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.black26,
-                          width: 2.0,
-                        )
-                    )
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  //validator: validator,
+                  controller: date,
+                  //style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: 'Add date "03/10"',
+                      hintStyle: TextStyle(color: Colors.black45),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black26,
+                            width: 2.0,
+                          )
+                      )
+                  ),
                 ),
+
+              ),
+              SizedBox(
+                height: 10,
               ),
 
-            ),
-            SizedBox(
-               height: 15,
-             ),
-            MaterialButton(
-             // margin: EdgeInsets.all(20),
-              height: 50,
-              color: Color.fromARGB(255, 0, 0, 0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25)),
-              onPressed: () {
-                ref.add({
-                  'bus route': route.text,
-                  //'div': ww,
-                  'date': date.text,
-                });
-              },
-              child: Text(
-                '          ADD          ',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
+
+              Container(
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  //validator: validator,
+                  controller: time,
+                  //style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: 'Add time "00.00"',
+                      hintStyle: TextStyle(color: Colors.black45),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black26,
+                            width: 2.0,
+                          )
+                      )
+                  ),
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                 height: 10,
+               ),
+              Container(
+
+                //SizedBox(height: 60.0,),
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  //validator: validator,
+                  controller: route,
+                  //style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: 'Add bus route',
+                      hintStyle: TextStyle(color: Colors.black45),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black26,
+                            width: 2.0,
+                          )
+                      )
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+
+              MaterialButton(
+               // margin: EdgeInsets.all(20),
+                height: 40,
+                color: Color.fromARGB(255, 0, 0, 0),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                onPressed: () {
+                  ref.add({
+                    'bus route': route.text,
+                    'index': index.text,
+                    'date': date.text,
+                    'time': time.text,
+                  });
+                },
+                child: Text(
+                  '          ADD          ',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -36,12 +36,12 @@ class _mainpageState extends State<mainpage> {
                         margin: const EdgeInsets.only(bottom: 12),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(6),
                           boxShadow: const [
                             BoxShadow(
                               color: Colors.black12,
-                              offset: Offset(1, 1),
-                              blurRadius: 10,
+                              //offset: Offset(1, 1),
+                              blurRadius: 5,
                             ),
                           ],
                         ),
@@ -52,10 +52,23 @@ class _mainpageState extends State<mainpage> {
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 //snap[index]['date'],
-                                "${snap[index]['date']}\ of Feb",
+                                snap[index]['date'],
                                 style: const TextStyle(
                                   color: Colors.green,
                                  // color: Colors.green.withOpacity(0.7),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 120),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                //snap[index]['date'],
+                                snap[index]['time'],
+                                style: const TextStyle(
+                                  color: Colors.green,
+                                  // color: Colors.green.withOpacity(0.7),
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -67,6 +80,17 @@ class _mainpageState extends State<mainpage> {
                                 snap[index]['bus route'],
                                 style: TextStyle(
                                  color: Colors.black,
+                                  //fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 60),
+                              alignment: Alignment.center,
+                              child: Text(
+                                snap[index]['index'],
+                                style: TextStyle(
+                                  color: Colors.black,
                                   //fontWeight: FontWeight.bold,
                                 ),
                               ),
