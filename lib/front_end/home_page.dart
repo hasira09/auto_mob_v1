@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../Main Pages/Attendance/mainpage.dart';
 import '../Main Pages/Attendance/main_attendance_page.dart';
-import '../Main Pages/Settings Page/Attendance/Attendance.dart';
+//import '../Main Pages/Settings Page/Attendance/Attendance.dart';
 import '../Main Pages/Emergency.dart';
 import '../Main Pages/Location.dart';
 import '../Main Pages/Payment.dart';
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => PaymentPage()));
+                                    builder: (context) => payment()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
