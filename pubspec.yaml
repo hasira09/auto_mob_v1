@@ -91,6 +91,7 @@ flutter:
   - assets/privacy_button.png
   - assets/terms_button.png
   - assets/profile.png
+  - assets/terms.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
