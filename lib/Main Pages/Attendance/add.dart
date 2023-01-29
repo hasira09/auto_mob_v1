@@ -14,7 +14,7 @@ class _addState extends State<add> {
   TextEditingController date = TextEditingController();
   TextEditingController time = TextEditingController();
 
-  CollectionReference ref = FirebaseFirestore.instance.collection('users');
+  CollectionReference ref = FirebaseFirestore.instance.collection('attendance');
 
   @override
   Widget build(BuildContext context) {

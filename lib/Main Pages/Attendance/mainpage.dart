@@ -21,7 +21,7 @@ class _mainpageState extends State<mainpage> {
           children: [
             //const Text("\nProducts"),
             StreamBuilder<QuerySnapshot>(
-              stream: FirebaseFirestore.instance.collection("users").snapshots(),
+              stream: FirebaseFirestore.instance.collection("attendance").snapshots(),
               builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if(snapshot.hasData) {
                   final snap = snapshot.data!.docs;
@@ -79,9 +79,7 @@ class _mainpageState extends State<mainpage> {
                               child: Text(
                                 snap[index]['bus route'],
                                 style: TextStyle(
-                                 color: Colors.black,
-                                  //fontWeight: FontWeight.bold,
-                                ),
+                                 color: Colors.black,),
                               ),
                             ),
                             Container(

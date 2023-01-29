@@ -12,7 +12,7 @@ import '../Main Pages/Emergency.dart';
 import '../Main Pages/Location.dart';
 import '../Main Pages/Payment.dart';
 import '../Main Pages/Settings Page/Settings.dart';
-import '../Main Pages/View Profile.dart';
+import '../Main Pages/Profile/View Profile.dart';
 import '../Main Pages/Attendance/add.dart';
 
 class HomePage extends StatefulWidget {

@@ -188,6 +188,9 @@ class _paymentState extends State<payment> {
                 builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if(snapshot.hasData) {
                     final snap = snapshot.data!.docs;
+
+
+
                     return ListView.builder(
                       shrinkWrap: true,
                       primary: false,
