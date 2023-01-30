@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
+import '../../front_end/home_page.dart';
+
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
@@ -18,7 +20,21 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Settings"),),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Settings",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
+        elevation: 0.0,
+      ),
       body: Center(
         child: Column(
           // add an elevation
@@ -35,7 +51,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         MaterialPageRoute(
                             builder: (context) => (help_support())));
                   },
-                  child: Image.asset('assets/help_button.png', width: 380,),
+                  child: Image.asset('assets/help_button.png', width: 360,),
 
                 ),
               ),
@@ -51,7 +67,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       MaterialPageRoute(
                           builder: (context) => (privacy())));
                 },
-                child: Image.asset('assets/privacy_button.png', width: 380,),
+                child: Image.asset('assets/privacy_button.png', width: 360,),
               ),
             ),
             SizedBox(
@@ -66,7 +82,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       MaterialPageRoute(
                           builder: (context) => (termsandcondition())));
                 },
-                child: Image.asset('assets/terms_button.png', width: 380,),
+                child: Image.asset('assets/terms_button.png', width: 360,),
               ),
             ),
             SizedBox(
@@ -81,7 +97,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       MaterialPageRoute(
                           builder: (context) => (aboutPage())));
                 },
-                child: Image.asset('assets/about_button.png', width: 380,),
+                child: Image.asset('assets/about_button.png', width: 360,),
 
               ),
             ),
