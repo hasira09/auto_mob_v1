@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../front_end/home_page.dart';
 import 'add.dart';
 import 'mainpage.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,21 @@ class _HomeState extends State<Home> {
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Attendance'),
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Attendence",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
+        elevation: 0.0,
       ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

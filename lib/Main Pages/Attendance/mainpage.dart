@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import '../../front_end/home_page.dart';
+import 'main_attendance_page.dart';
 //meke ghnna card view eka
 
 
@@ -13,8 +16,21 @@ class _mainpageState extends State<mainpage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Attendance'),
+        backgroundColor: Colors.white,
+        title: const Text(
+          "All Attendance",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home()));
+          },
+        ),
+        elevation: 0.0,
       ),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(

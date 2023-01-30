@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'View Profile.dart';
+
 class profileData extends StatefulWidget {
   const profileData({Key? key}) : super(key: key);
 
@@ -27,7 +29,22 @@ class _profileDataState extends State<profileData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Update Profile Data"),),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Update Profile Data",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ViewProfilePage()));
+          },
+        ),
+        elevation: 0.0,
+      ),
+
 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

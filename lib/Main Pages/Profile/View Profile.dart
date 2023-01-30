@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_mob_v1/Main%20Pages/Profile/ProfileMain.dart';
 
+import '../../front_end/home_page.dart';
+
 
 class ViewProfilePage extends StatefulWidget {
   const ViewProfilePage({Key? key}) : super(key: key);
@@ -20,8 +22,21 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        backgroundColor: Colors.white,
+        title: const Text(
+          "View Profile",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
+        elevation: 0.0,
       ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

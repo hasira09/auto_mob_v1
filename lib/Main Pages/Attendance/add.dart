@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'main_attendance_page.dart';
+import 'mainpage.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 
 class add extends StatefulWidget {
@@ -20,9 +23,23 @@ class _addState extends State<add> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-        title: Text('Add Attendance'),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Add Attendance",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home()));
+          },
+        ),
+        elevation: 0.0,
       ),
+
+
       body: SingleChildScrollView(
         child: Container(
 

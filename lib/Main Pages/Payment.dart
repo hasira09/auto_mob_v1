@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import '../front_end/home_page.dart';
+
 class payment extends StatefulWidget {
   const payment({Key? key}) : super(key: key);
 
@@ -26,7 +28,22 @@ class _paymentState extends State<payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Payment"),),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Payment",
+          style: TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Image.asset("assets/icons/back.png"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
+        elevation: 0.0,
+      ),
+
 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
