@@ -4,10 +4,10 @@
 •	Currently, you can download our application from GitHub as an APK, install it on your phone and you can use all the functions.  
 •	We will put our application on Play Store future.
 
-What is Auto Mob?
+### What is Auto Mob?
 Auto Mob is a Cloud Based Mobile Application Development project which will be built by Team PrintF();. This project was chosen since this will be a good investment for SLTC Research University. We are creating Auto Mob to find a solution to the problem faced by students and staff members due to the time differentiation of shuttle services at SLTC Research University.  
 
-Aim of Auto Mob
+### Aim of Auto Mob
 The aim of Auto Mob is to help manage the time of SLTC staff members and students who use the shuttle service.
 Auto Mob, 
 •	Implement and introduce a successful Mobile Application that allow SLTC users to lively track SLTC Shuttles.
