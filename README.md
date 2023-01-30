@@ -24,27 +24,32 @@ Auto Mob,
 There are email password authentication and google authentication.  After signing in this way, you will go to the signup page.  You can log into the account using the username and password, or you can log in through Gmail.
 After going to the account, you can see the home page.  Here there are six main menus: location, attendance, view profile, payment, emergency, and setting.
 1.	Location
-
 By giving the current location of the student and the shuttle, you can find out how far the bus is. A poli line is used for this.
+
 2.	Attendance
-
 Students can mark their attendance themselves.  All these attendances are shown on a separate page.  The attendance page contains the input date, time, index number, and route.
-3.	View Profile
 
+3.	View Profile
 Here you can update your profile photo.  Now the profile shows the relevant student's name, email, index number, and batch uniquely.
+
 4.	Payment
 Here you can give payment details and upload the payment slip.  Everything is saved in our cloud.
+
 5.	Emergency
 This contains numbers to contact in an emergency.  When you click on the phone icon, the call will be auto-generated.
+
 6.	Setting
 The setting page contains help and support, terms and conditions, privacy policy, and about us.  When we click on the relevant one, we will be directed to the relevant page.
 
-•	Help & Support 
+•	Help & Support
 This page contains the contact numbers of SLTC and the contact numbers of our group members.
+
 •	Terms & Conditions 
 This page contains terms & conditions about our app.
+
 •	Privacy Policy
-This page contains the privacy policy of our app
+This page contains the privacy policy of our app.
+
 •	About Us
 This contains about us.  This includes the vision and mission of our Auto Mob project.
 
