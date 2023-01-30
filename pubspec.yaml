@@ -48,6 +48,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -92,7 +93,7 @@ flutter:
   - assets/terms_button.png
   - assets/profile.png
   - assets/terms.png
-  - assets/pryvacy.png
+  - assets/privacy.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
