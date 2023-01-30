@@ -1,4 +1,7 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -29,6 +32,7 @@ class _profileDataState extends State<profileData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< Updated upstream
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
@@ -45,6 +49,9 @@ class _profileDataState extends State<profileData> {
         elevation: 0.0,
       ),
 
+=======
+      appBar: AppBar(title: const Text("Update Profile Data"),),
+>>>>>>> Stashed changes
 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -52,7 +59,7 @@ class _profileDataState extends State<profileData> {
           child: Column(
             children: [
               Column(
-                children: [
+                children: const [
                   SizedBox(
                     height: 20,
                   ),
@@ -62,12 +69,12 @@ class _profileDataState extends State<profileData> {
               Container(
 
                 //SizedBox(height: 60.0,),
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
                   //validator: validator,
                   controller: name,
                   //style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: 'Enter your name',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
@@ -80,17 +87,17 @@ class _profileDataState extends State<profileData> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               Container(
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
                   //validator: validator,
                   controller: email,
                   //style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: 'Enter your email',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
@@ -102,18 +109,18 @@ class _profileDataState extends State<profileData> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
 
               Container(
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
                   //validator: validator,
                   controller: index,
                   //style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: 'Enter your index',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
@@ -126,17 +133,17 @@ class _profileDataState extends State<profileData> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               Container(
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
                   //validator: validator,
                   controller: batch,
                   //style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: 'Enter your batch',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
@@ -149,7 +156,7 @@ class _profileDataState extends State<profileData> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
@@ -179,21 +186,22 @@ class _profileDataState extends State<profileData> {
                       //Store the file
                       await referenceImageToUpload.putFile(File(file!.path));
                       imageUrl = await referenceImageToUpload.getDownloadURL();
+                      print(imageUrl);
                     } catch (error) {
                       //Some error occurred
                     }
                   },
-                  icon: Icon(Icons.upload_file,size: 45.0),
+                  icon: const Icon(Icons.upload_file,size: 45.0),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                  child:Text("UPLOAD PROFILE IMAGE")
+                  child:const Text("UPLOAD PROFILE IMAGE")
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
 
@@ -201,12 +209,22 @@ class _profileDataState extends State<profileData> {
               MaterialButton(
                 // margin: EdgeInsets.all(20),
                 height: 50,
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: const Color.fromARGB(255, 0, 0, 0),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25)),
                 onPressed: () {
-                  ref.add({
-                    //'bus route': route.text,
+                  // ref.add({
+                  //   //'bus route': route.text,
+                  //   'name': name.text,
+                  //   'email': email.text,
+                  //   'index': index.text,
+                  //   'batch': batch.text,
+                  //   'image': imageUrl,
+                  // });
+                  final FirebaseAuth auth = FirebaseAuth.instance;
+                  final User? user = auth.currentUser;
+                  final uid = user!.uid;
+                  FirebaseFirestore.instance.collection("Data").doc(uid).set({
                     'name': name.text,
                     'email': email.text,
                     'index': index.text,
@@ -214,7 +232,7 @@ class _profileDataState extends State<profileData> {
                     'image': imageUrl,
                   });
                 },
-                child: Text(
+                child: const Text(
                   '               SUBMIT               ',
                   style: TextStyle(
                     color: Colors.white,
@@ -223,14 +241,13 @@ class _profileDataState extends State<profileData> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
             ],
           ),
         ),
       ),
-
     );
   }
 }

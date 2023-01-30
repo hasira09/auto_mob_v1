@@ -3,6 +3,8 @@ import 'package:auto_mob_v1/backend/firebase/auth/google_auth.dart';
 import 'package:auto_mob_v1/front_end/auth_ui/log_in.dart';
 import 'package:auto_mob_v1/global_users/enum_automob.dart';
 import 'package:auto_mob_v1/global_users/reg_exp.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -141,6 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
            SystemChannels.textInput.invokeMethod('TextInput.hide');
            final EmailSignUpResults response = await this._emailAndPasswardAuth.signUpAuth(email: this._email.text, pwd: this._pwd.text);
+
            if(response == EmailSignUpResults.SignUpCompleted){
              Navigator.push(context, MaterialPageRoute(builder: (_) => LogInPage()));
            }else{

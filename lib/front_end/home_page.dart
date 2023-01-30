@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Container(
             height: size.height * .30,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Color.fromRGBO(64, 123, 255, 50),
                 image: DecorationImage(image: AssetImage(""))),
           ),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.center,
                       height: 52,
                       width: 42,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
@@ -65,22 +65,26 @@ class _HomePageState extends State<HomePage> {
                         ?.copyWith(fontWeight: FontWeight.w800),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                   ),
                   Expanded(
                     child: GridView(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 10),
                       children: [
                         InkWell(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LocationPage()));
+                                    builder: (context) => const LocationPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -110,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -135,12 +139,12 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ViewProfilePage()));
+                                    builder: (context) => const ViewProfilePage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -165,12 +169,12 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => payment()));
+                                    builder: (context) => const payment()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -195,12 +199,12 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => EmergencyPage()));
+                                    builder: (context) => const EmergencyPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -225,12 +229,12 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SettingsPage()));
+                                    builder: (context) => const SettingsPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Color.fromRGBO(0, 0, 128, 0.1),
+                              color: const Color.fromRGBO(0, 0, 128, 0.1),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -251,10 +255,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10),
                     ),
                   ),
                 ],

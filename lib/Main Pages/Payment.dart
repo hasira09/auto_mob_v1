@@ -59,7 +59,6 @@ class _paymentState extends State<payment> {
               ),
 
               Container(
-
                 //SizedBox(height: 60.0,),
                 padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
@@ -149,7 +148,7 @@ class _paymentState extends State<payment> {
                         referenceRoot.child('images');
 
                         Reference referenceImageToUpload =
-                        referenceDirImages.child('name');
+                        referenceDirImages.child('');
 
                         try {
                           //Store the file
