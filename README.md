@@ -13,14 +13,12 @@ Aim of Auto Mob
 The aim of Auto Mob is to help manage the time of SLTC staff members and students who use the shuttle service.
 Auto Mob, 
 •	Implement and introduce a successful Mobile Application that allow SLTC users to lively track SLTC Shuttles.
-
 •	Establishing a properly implementing GPS system which enables live tracking.
-
 •	Update each user’s account after a proper user payment and initiate a system to record users travel details.
 
 ## Technologies
 
-•	We used the flutter framework with the dart as a programming language, google cloud as a cloud platform, and firebase as a database. 
+•	We used the flutter framework with the dart as a programming language, google cloud as a cloud platform, and firebase as a database.
 •	Here we used the options of google cloud: authentication, google firestore, google storage, and real-time database.
 
 ## Features
@@ -39,6 +37,7 @@ Here you can give payment details and upload the payment slip.  Everything is sa
 This contains numbers to contact in an emergency.  When you click on the phone icon, the call will be auto-generated.
 6.	Setting
 The setting page contains help and support, terms and conditions, privacy policy, and about us.  When we click on the relevant one, we will be directed to the relevant page.
+
 •	Help & Support 
 This page contains the contact numbers of SLTC and the contact numbers of our group members.
 •	Terms & Conditions 
