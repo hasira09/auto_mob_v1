@@ -13,7 +13,9 @@ Aim of Auto Mob
 The aim of Auto Mob is to help manage the time of SLTC staff members and students who use the shuttle service.
 Auto Mob, 
 •	Implement and introduce a successful Mobile Application that allow SLTC users to lively track SLTC Shuttles.
+
 •	Establishing a properly implementing GPS system which enables live tracking.
+
 •	Update each user’s account after a proper user payment and initiate a system to record users travel details.
 
 ## Technologies
