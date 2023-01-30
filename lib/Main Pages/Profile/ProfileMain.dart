@@ -21,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
-          "Prfile Information",
+          "Profile Information",
           style: TextStyle(color: Colors.black, fontSize: 22),
         ),
         leading: IconButton(
