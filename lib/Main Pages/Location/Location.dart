@@ -30,22 +30,31 @@ class LocationPage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
+            Image.asset(
+              "assets/Bus Stop.gif",
+              width: 350,
+            ),
+            SizedBox(
+              height: 100,
+            ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return const MapScreen();
-                  }));
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const CurrentLocation();
+                    },
+                  ));
                 },
-                child: const Text("Map Location")),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return const CurrentLocation();
-                  }));
-                },
-                child: const Text("Current Location")),
+                child: const Text("Current Location"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  textStyle:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )),
+            SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context)
@@ -53,7 +62,13 @@ class LocationPage extends StatelessWidget {
                     return const LocationPoly();
                   }));
                 },
-                child: const Text("Polyline Location"))
+                child: const Text("Shuttle Location"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  textStyle:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ))
           ],
         ),
       ),

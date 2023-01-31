@@ -1,5 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../front_end/home_page.dart';
 import 'add.dart';
@@ -32,7 +30,6 @@ class _HomeState extends State<Home> {
         ),
         elevation: 0.0,
       ),
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -40,12 +37,13 @@ class _HomeState extends State<Home> {
             "assets/icons/Attendance.svg",
             width: 300,
           ),
-          SizedBox(height: 60.0,),
+          SizedBox(
+            height: 60.0,
+          ),
           Center(
             child: Container(
               margin: EdgeInsets.all(20),
               height: 50,
-              // width: w,
               child: MaterialButton(
                 color: Color.fromARGB(255, 0, 0, 0),
                 shape: RoundedRectangleBorder(
@@ -68,13 +66,10 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
-
           Center(
             child: Container(
               margin: EdgeInsets.all(20),
               height: 50,
-              // width: w,
               child: MaterialButton(
                 color: Color.fromARGB(255, 0, 0, 0),
                 shape: RoundedRectangleBorder(
@@ -88,7 +83,7 @@ class _HomeState extends State<Home> {
                   );
                 },
                 child: Text(
-                  '   ADD NEW ATTENDANCE  '  ,
+                  '   ADD NEW ATTENDANCE  ',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,

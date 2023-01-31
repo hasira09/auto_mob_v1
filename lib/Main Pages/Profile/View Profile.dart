@@ -1,12 +1,9 @@
 import 'package:auto_mob_v1/Main%20Pages/Profile/ProfileData.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_mob_v1/Main%20Pages/Profile/ProfileMain.dart';
 
 import '../../front_end/home_page.dart';
-
 
 class ViewProfilePage extends StatefulWidget {
   const ViewProfilePage({Key? key}) : super(key: key);
@@ -36,7 +33,6 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
         ),
         elevation: 0.0,
       ),
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -44,13 +40,13 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
             "assets/profile.png",
             width: 250,
           ),
-          SizedBox(height: 60.0,),
-
+          SizedBox(
+            height: 60.0,
+          ),
           Center(
             child: Container(
               margin: EdgeInsets.all(20),
               height: 50,
-              // width: w,
               child: MaterialButton(
                 color: Color.fromARGB(255, 0, 0, 0),
                 shape: RoundedRectangleBorder(
@@ -73,7 +69,6 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
               ),
             ),
           ),
-
           Center(
             child: Container(
               margin: EdgeInsets.all(20),
@@ -106,12 +101,3 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-

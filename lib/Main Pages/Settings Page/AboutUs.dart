@@ -23,8 +23,7 @@ class _aboutPageState extends State<aboutPage> {
         leading: IconButton(
           icon: Image.asset("assets/icons/back.png"),
           onPressed: () {
-            Navigator.push(
-                context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => SettingsPage()));
           },
         ),
@@ -38,8 +37,10 @@ class _aboutPageState extends State<aboutPage> {
             ),
             Material(
               child: Container(
-                child: Image.asset('assets/images/about.png', width: 320,),
-
+                child: Image.asset(
+                  'assets/images/about.png',
+                  width: 320,
+                ),
               ),
             ),
           ],

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'main_attendance_page.dart';
-import 'mainpage.dart';
-//import 'package:fluttertoast/fluttertoast.dart';
 
 class add extends StatefulWidget {
   @override
@@ -38,13 +36,9 @@ class _addState extends State<add> {
         ),
         elevation: 0.0,
       ),
-
-
       body: SingleChildScrollView(
         child: Container(
-
           child: Column(
-
             children: [
               SizedBox(
                 height: 20,
@@ -57,23 +51,17 @@ class _addState extends State<add> {
                 height: 20,
               ),
               Container(
-
-                //SizedBox(height: 60.0,),
                 padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
-                  //validator: validator,
                   controller: index,
-                  //style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       hintText: 'Add your index number',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Colors.black26,
-                            width: 2.0,
-                          )
-                      )
-                  ),
+                        color: Colors.black26,
+                        width: 2.0,
+                      ))),
                 ),
               ),
               SizedBox(
@@ -82,74 +70,55 @@ class _addState extends State<add> {
               Container(
                 padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
-                  //validator: validator,
                   controller: date,
-                  //style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       hintText: 'Add date "03/10"',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Colors.black26,
-                            width: 2.0,
-                          )
-                      )
-                  ),
+                        color: Colors.black26,
+                        width: 2.0,
+                      ))),
                 ),
-
               ),
               SizedBox(
                 height: 10,
               ),
-
-
               Container(
                 padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                 child: TextFormField(
-                  //validator: validator,
                   controller: time,
-                  //style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       hintText: 'Add time "00.00"',
                       hintStyle: TextStyle(color: Colors.black45),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Colors.black26,
-                            width: 2.0,
-                          )
-                      )
-                  ),
-                ),
-              ),
-              SizedBox(
-                 height: 10,
-               ),
-              Container(
-
-                //SizedBox(height: 60.0,),
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
-                child: TextFormField(
-                  //validator: validator,
-                  controller: route,
-                  //style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                      hintText: 'Add bus route',
-                      hintStyle: TextStyle(color: Colors.black45),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.black26,
-                            width: 2.0,
-                          )
-                      )
-                  ),
+                        color: Colors.black26,
+                        width: 2.0,
+                      ))),
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
-
+              Container(
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+                child: TextFormField(
+                  controller: route,
+                  decoration: InputDecoration(
+                      hintText: 'Add bus route',
+                      hintStyle: TextStyle(color: Colors.black45),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        color: Colors.black26,
+                        width: 2.0,
+                      ))),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
               MaterialButton(
-               // margin: EdgeInsets.all(20),
                 height: 40,
                 color: Color.fromARGB(255, 0, 0, 0),
                 shape: RoundedRectangleBorder(

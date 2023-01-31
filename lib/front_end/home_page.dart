@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
             height: size.height * .30,
             decoration: const BoxDecoration(
                 color: Color.fromRGBO(64, 123, 255, 50),
-                image: DecorationImage(image: AssetImage(""))),
+                image: DecorationImage(image: AssetImage("assets/Lion.png"), fit: BoxFit.fitWidth)),
           ),
           SafeArea(
             child: Padding(
@@ -51,23 +51,23 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Align(
                     alignment: Alignment.topRight,
-                  ),
-                  MaterialButton(
-                    onPressed: () async {
-                      await auth.signOut();
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => LogInPage()));
-                    },
-                    child: InkWell(
-                      radius: 100,
-                      child: Image.asset(
-                        'assets/Logout.png',
-                        width: 40,
+                    child: MaterialButton(
+                      onPressed: () async {
+                        await auth.signOut();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => LogInPage()));
+                      },
+                      child: InkWell(
+                        radius: 100,
+                        child: Image.asset(
+                          'assets/Logout.png',
+                          width: 40,
+                        ),
                       ),
                     ),
                   ),
                   Text(
-                    "               WELCOME TO \n                     AUTOMOB",
+                    "WELCOME TO \nAUTOMOB",
                     style: Theme.of(context)
                         .textTheme
                         .headline4

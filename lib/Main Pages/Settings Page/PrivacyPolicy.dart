@@ -22,8 +22,7 @@ class _privacyState extends State<privacy> {
         leading: IconButton(
           icon: Image.asset("assets/icons/back.png"),
           onPressed: () {
-            Navigator.push(
-                context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => SettingsPage()));
           },
         ),
@@ -37,8 +36,10 @@ class _privacyState extends State<privacy> {
             ),
             Material(
               child: Container(
-                child: Image.asset('assets/images/pr1.png', width: 320,),
-
+                child: Image.asset(
+                  'assets/images/pr1.png',
+                  width: 320,
+                ),
               ),
             ),
           ],

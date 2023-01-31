@@ -63,11 +63,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-  flutter_native_splash: ^2.2.16
-
-flutter_native_splash:
-  color: "#FFFFFF"
-  image: assets/splash.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -93,10 +88,17 @@ flutter:
   - assets/help_button.png
   - assets/privacy_button.png
   - assets/terms_button.png
+  - assets/Profile.gif
   - assets/profile.png
   - assets/terms.png
   - assets/privacy.png
   - assets/Logout.png
+  - assets/Bus Stop.gif
+  - assets/Lion.png
+  - assets/AutoMobLogo.png
+  - assets/SplashScreen.png
+  - assets/bg.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

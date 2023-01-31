@@ -1,11 +1,11 @@
-class PolylineResponses {
+class PolylineResponse {
   List<GeocodedWaypoints>? geocodedWaypoints;
   List<Routes>? routes;
   String? status;
 
-  PolylineResponses({this.geocodedWaypoints, this.routes, this.status});
+  PolylineResponse({this.geocodedWaypoints, this.routes, this.status});
 
-  PolylineResponses.fromJson(Map<String, dynamic> json) {
+  PolylineResponse.fromJson(Map<String, dynamic> json) {
     if (json['geocoded_waypoints'] != null) {
       geocodedWaypoints = <GeocodedWaypoints>[];
       json['geocoded_waypoints'].forEach((v) {
@@ -69,7 +69,7 @@ class Routes {
         this.copyrights,
         this.legs,
         this.overviewPolyline,
-        this.summary,});
+        this.summary});
 
   Routes.fromJson(Map<String, dynamic> json) {
     bounds =
@@ -166,7 +166,7 @@ class Legs {
         this.endLocation,
         this.startAddress,
         this.startLocation,
-        this.steps,});
+        this.steps});
 
   Legs.fromJson(Map<String, dynamic> json) {
     distance = json['distance'] != null

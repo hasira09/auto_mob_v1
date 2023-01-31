@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
    <application
-        android:label="auto_mob_v1"
+        android:label="Auto Mob"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -36,7 +36,7 @@
             android:value="2" />
 
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyBjl8Sdb_gsL47Jk8LQcAIuv8YyjSouYLk"/>
+           android:value="AIzaSyD7igEoM1rOEPlTWPxUWysFEH03hQ7Eff4"/>
 
     </application>
 </manifest>

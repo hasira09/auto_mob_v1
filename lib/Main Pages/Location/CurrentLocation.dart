@@ -21,6 +21,15 @@ class _CurrentLocationState extends State<CurrentLocation> {
 
   @override
   Widget build(BuildContext context) {
+    final db = FirebaseFirestore.instance;
+    db.collection("DriverDetail").get().then((event) {
+      for (var doc in event.docs) {
+        final docData = doc.data();
+        List<dynamic> points = docData['lan'];
+        final latlngPoints = points.map((e) => LatLng(e.latitude, e.longitude));
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

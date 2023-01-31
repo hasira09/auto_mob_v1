@@ -22,12 +22,12 @@ class _LocationPolyState extends State<LocationPoly> {
   String totalDistance = "";
   String totalTime = "";
 
-  String apiKey = "AIzaSyBjl8Sdb_gsL47Jk8LQcAIuv8YyjSouYLk";
+  String apiKey = "AIzaSyD7igEoM1rOEPlTWPxUWysFEH03hQ7Eff4";
 
-  LatLng origin = const LatLng(6.9301, 79.8615);
+  LatLng origin = const LatLng(6.92989383762, 79.8615940228);
   LatLng destination = const LatLng(6.8540, 80.0929);
 
-  PolylineResponses polylineResponses = PolylineResponses();
+  PolylineResponse polylineResponses = PolylineResponse();
 
   Set<Polyline> polylinePoints = {};
 
@@ -37,7 +37,7 @@ class _LocationPolyState extends State<LocationPoly> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
-          "Polyline Location",
+          "Shuttle Location",
           style: TextStyle(color: Colors.black, fontSize: 22),
         ),
         leading: IconButton(
@@ -68,8 +68,8 @@ class _LocationPolyState extends State<LocationPoly> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("Total Distance" + totalDistance),
-                Text("Total Time" + totalTime),
+                Text("Total Distance:- " + totalDistance),
+                Text("Total Time:- " + totalTime),
               ],
             ),
           )
@@ -79,7 +79,7 @@ class _LocationPolyState extends State<LocationPoly> {
         onPressed: () {
           drawPolyline();
         },
-        child: const Icon(Icons.directions),
+        child: const Icon(Icons.bus_alert),
       ),
     );
   }
@@ -98,29 +98,33 @@ class _LocationPolyState extends State<LocationPoly> {
             destination.longitude.toString() +
             "&mode=driving"));
 
-    polylineResponses = PolylineResponses.fromJson(jsonDecode(response.body));
+    print(response.body);
 
-    totalDistance = polylineResponses.routes![0].legs![0].distance!.text!;
-    totalTime = polylineResponses.routes![0].legs![0].duration!.text!;
+    polylineResponses = PolylineResponse.fromJson(jsonDecode(response.body));
+
+    totalDistance = polylineResponses.routes![1].legs![1].distance!.text!;
+    totalTime = polylineResponses.routes![1].legs![1].duration!.text!;
 
     for (int i = 0;
-        i < polylineResponses.routes![0].legs![0].steps!.length;
+        i < polylineResponses.routes![1].legs![1].steps!.length;
         i++) {
       polylinePoints.add(Polyline(
           polylineId: PolylineId(polylineResponses
-              .routes![0].legs![0].steps![i].polyline!.points!),
+              .routes![1].legs![1].steps![1].polyline!.points!),
           points: [
             LatLng(
                 polylineResponses
-                    .routes![0].legs![0].steps![i].startLocation!.lat!,
+                    .routes![1].legs![1].steps![i].startLocation!.lat!,
                 polylineResponses
-                    .routes![0].legs![0].steps![i].startLocation!.lng!),
+                    .routes![1].legs![0].steps![i].startLocation!.lng!),
             LatLng(
                 polylineResponses
-                    .routes![0].legs![0].steps![i].endLocation!.lat!,
+                    .routes![1].legs![1].steps![i].endLocation!.lat!,
                 polylineResponses
-                    .routes![0].legs![0].steps![i].endLocation!.lng!),
-          ],width: 3, color: Colors.red));
+                    .routes![1].legs![1].steps![i].endLocation!.lng!),
+          ],
+          width: 3,
+          color: Colors.red));
     }
 
     setState(() {});

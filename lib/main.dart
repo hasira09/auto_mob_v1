@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
-import 'front_end/auth_ui/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
@@ -18,20 +17,21 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AutoMob',
-      theme: ThemeData(fontFamily: "Nunito Sans",
+      theme: ThemeData(
+        fontFamily: "Nunito Sans",
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: MainPage(),
+      home: LogInPage(),
     );
   }
 }
+
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 

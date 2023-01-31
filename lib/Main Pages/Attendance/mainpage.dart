@@ -1,10 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import '../../front_end/home_page.dart';
 import 'main_attendance_page.dart';
-//meke ghnna card view eka
-
 
 class mainpage extends StatefulWidget {
   @override
@@ -13,7 +9,7 @@ class mainpage extends StatefulWidget {
 
 class _mainpageState extends State<mainpage> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -30,16 +26,17 @@ class _mainpageState extends State<mainpage> {
         ),
         elevation: 0.0,
       ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            //const Text("\nProducts"),
             StreamBuilder<QuerySnapshot>(
-              stream: FirebaseFirestore.instance.collection("attendance").snapshots(),
-              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                if(snapshot.hasData) {
+              stream: FirebaseFirestore.instance
+                  .collection("attendance")
+                  .snapshots(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasData) {
                   final snap = snapshot.data!.docs;
                   return ListView.builder(
                     shrinkWrap: true,
@@ -56,7 +53,6 @@ class _mainpageState extends State<mainpage> {
                           boxShadow: const [
                             BoxShadow(
                               color: Colors.black12,
-                              //offset: Offset(1, 1),
                               blurRadius: 5,
                             ),
                           ],
@@ -67,11 +63,9 @@ class _mainpageState extends State<mainpage> {
                               margin: const EdgeInsets.only(left: 70),
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                //snap[index]['date'],
                                 snap[index]['date'],
                                 style: const TextStyle(
                                   color: Colors.green,
-                                 // color: Colors.green.withOpacity(0.7),
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -80,11 +74,9 @@ class _mainpageState extends State<mainpage> {
                               margin: const EdgeInsets.only(left: 120),
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                //snap[index]['date'],
                                 snap[index]['time'],
                                 style: const TextStyle(
                                   color: Colors.green,
-                                  // color: Colors.green.withOpacity(0.7),
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -95,7 +87,8 @@ class _mainpageState extends State<mainpage> {
                               child: Text(
                                 snap[index]['bus route'],
                                 style: TextStyle(
-                                 color: Colors.black,),
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                             Container(
@@ -105,7 +98,6 @@ class _mainpageState extends State<mainpage> {
                                 snap[index]['index'],
                                 style: TextStyle(
                                   color: Colors.black,
-                                  //fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -114,7 +106,10 @@ class _mainpageState extends State<mainpage> {
                               alignment: Alignment.centerLeft,
                               child: Row(
                                 children: [
-                                  Image.asset('assets/Check.png', width: 40,),
+                                  Image.asset(
+                                    'assets/Check.png',
+                                    width: 40,
+                                  ),
                                 ],
                               ),
                             ),
@@ -124,7 +119,6 @@ class _mainpageState extends State<mainpage> {
                     },
                   );
                 } else {
-
                   return const SizedBox();
                 }
               },
@@ -135,6 +129,3 @@ class _mainpageState extends State<mainpage> {
     );
   }
 }
-
-
-
