@@ -24,7 +24,7 @@ class _profileDataState extends State<profileData> {
   TextEditingController email = TextEditingController();
   TextEditingController index = TextEditingController();
   TextEditingController batch = TextEditingController();
-  CollectionReference ref = FirebaseFirestore.instance.collection('profile');
+  CollectionReference ref = FirebaseFirestore.instance.collection('Data');
 
 
   String imageUrl = '';
@@ -32,7 +32,7 @@ class _profileDataState extends State<profileData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< Updated upstream
+// <<<<<<< Updated upstream
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
@@ -49,9 +49,9 @@ class _profileDataState extends State<profileData> {
         elevation: 0.0,
       ),
 
-=======
-      appBar: AppBar(title: const Text("Update Profile Data"),),
->>>>>>> Stashed changes
+// =======
+//       appBar: AppBar(title: const Text("Update Profile Data"),),
+// >>>>>>> Stashed changes
 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

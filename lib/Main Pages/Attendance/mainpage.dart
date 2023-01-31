@@ -41,20 +41,6 @@ class _mainpageState extends State<mainpage> {
               builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if(snapshot.hasData) {
                   final snap = snapshot.data!.docs;
-
-
-
-                  
-
-
-
-
-
-
-
-
-
-
                   return ListView.builder(
                     shrinkWrap: true,
                     primary: false,

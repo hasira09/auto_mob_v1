@@ -7,13 +7,16 @@ import 'package:flutter_svg/svg.dart';
 
 import '../Main Pages/Attendance/mainpage.dart';
 import '../Main Pages/Attendance/main_attendance_page.dart';
+
 //import '../Main Pages/Settings Page/Attendance/Attendance.dart';
 import '../Main Pages/Emergency.dart';
-import '../Main Pages/Location.dart';
+import '../Main Pages/Location/Location.dart';
 import '../Main Pages/Payment.dart';
 import '../Main Pages/Settings Page/Settings.dart';
 import '../Main Pages/Profile/View Profile.dart';
 import '../Main Pages/Attendance/add.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,6 +31,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+
     var size = MediaQuery.of(context).size; //total height and width of device
     return Scaffold(
       body: Stack(
@@ -43,22 +48,26 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: [
                   Align(
                     alignment: Alignment.topRight,
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 52,
-                      width: 42,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
+                  ),
+                  MaterialButton(
+                    onPressed: () async {
+                      await auth.signOut();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => LogInPage()));
+                    },
+                    child: InkWell(
+                      radius: 100,
+                      child: Image.asset(
+                        'assets/Logout.png',
+                        width: 40,
                       ),
-                      child: SvgPicture.asset("assets/icons/Home.svg"),
                     ),
                   ),
                   Text(
-                    "WELCOME TO \nAUTOMOB",
+                    "               WELCOME TO \n                     AUTOMOB",
                     style: Theme.of(context)
                         .textTheme
                         .headline4
@@ -69,17 +78,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: GridView(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 10,
+                              crossAxisSpacing: 10),
                       children: [
                         InkWell(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const LocationPage()));
+                                    builder: (context) =>
+                                        const LocationPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -139,7 +150,8 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const ViewProfilePage()));
+                                    builder: (context) =>
+                                        const ViewProfilePage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -199,7 +211,8 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const EmergencyPage()));
+                                    builder: (context) =>
+                                        const EmergencyPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -229,7 +242,8 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const SettingsPage()));
+                                    builder: (context) =>
+                                        const SettingsPage()));
                           },
                           child: Container(
                             decoration: BoxDecoration(
